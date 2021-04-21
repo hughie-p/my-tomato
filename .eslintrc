@@ -10,10 +10,11 @@
     "sessionStorage": true,
     "FileReader": true,
     "Headers": true,
-    "fetch": true
+    "fetch": true,
+    "JSX": true
   },
   "rules": {
-    "react/jsx-filename-extension": [1, { "extensions": [".js", ".jsx"] }],
+    "react/jsx-filename-extension": [1, { "extensions": [".js", ".jsx", ".ts", ".tsx"] }],
     "react/jsx-curly-newline": "off",
     "react/prop-types": 0,
     "react/prefer-stateless-function": 0,
@@ -30,6 +31,7 @@
     "import/resolver": {
       "node": {
         "paths": ["src"],
+        "extensions": [".js", ".jsx", ".ts", ".tsx"],
         "moduleDirectory": ["node_modules", "/"]
       },
       "babel-module": {}
