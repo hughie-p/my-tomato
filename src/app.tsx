@@ -1,7 +1,5 @@
 import * as React from 'react';
 
-function App() {
-  return <div>Home page</div>;
-}
+const App: React.FC = () => <div>Home page</div>;
 
 export default App;

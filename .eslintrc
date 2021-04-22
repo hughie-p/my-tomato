@@ -3,7 +3,12 @@
     "browser": true,
     "es2021": true
   },
-  "extends": ["airbnb", "plugin:prettier/recommended"],
+  "extends": [
+    "plugin:react/recommended",
+    "plugin:@typescript-eslint/recommended",
+    "airbnb",
+    "prettier"
+  ],
   "parser": "@typescript-eslint/parser",
   "parserOptions": {
     "ecmaFeatures": {
@@ -29,7 +34,6 @@
     "no-use-before-define": "off",
     "@typescript-eslint/no-use-before-define": ["error"],
     "react/jsx-curly-newline": "off",
-    "react/prop-types": 0,
     "react/prefer-stateless-function": 0,
     "react/jsx-fragments": [2, "element"],
     "react/jsx-tag-spacing": [
@@ -38,7 +42,15 @@
         "beforeSelfClosing": "always"
       }
     ],
-    "prettier/prettier": "error"
+    "prettier/prettier": "error",
+    "import/extensions": [
+      "error",
+      "ignorePackages",
+      {
+        "ts": "never",
+        "tsx": "never"
+      }
+    ]
   },
   "settings": {
     "import/resolver": {
@@ -46,8 +58,7 @@
         "paths": ["src"],
         "extensions": [".js", ".jsx", ".ts", ".tsx"],
         "moduleDirectory": ["node_modules", "/"]
-      },
-      "babel-module": {}
+      }
     }
   }
 }
