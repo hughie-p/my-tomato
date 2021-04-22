@@ -1,8 +1,8 @@
 import * as React from 'react';
 
 interface Props {
-  children: JSX.Element[] | JSX.Element;
-  onClick: React.MouseEventHandler;
+  children: JSX.Element[] | JSX.Element | string;
+  onClick?: React.MouseEventHandler;
 }
 
 const Button: React.FC<Props> = (props: Props) => {

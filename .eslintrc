@@ -24,8 +24,6 @@
     "navigator": true,
     "localStorage": true,
     "sessionStorage": true,
-    "FileReader": true,
-    "Headers": true,
     "fetch": true,
     "JSX": true
   },
@@ -42,11 +40,15 @@
         "beforeSelfClosing": "always"
       }
     ],
+    "react/prop-types": 0,
+    "react/require-default-props": "off",
     "prettier/prettier": "error",
     "import/extensions": [
       "error",
       "ignorePackages",
       {
+        "js": "never",
+        "jsx": "never",
         "ts": "never",
         "tsx": "never"
       }
