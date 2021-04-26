@@ -1,7 +1,7 @@
 import * as React from 'react';
 
 interface Props {
-  children: JSX.Element[] | JSX.Element | string;
+  children: React.ReactNode;
   onClick?: React.MouseEventHandler;
 }
 

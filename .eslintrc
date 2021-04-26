@@ -24,8 +24,7 @@
     "navigator": true,
     "localStorage": true,
     "sessionStorage": true,
-    "fetch": true,
-    "JSX": true
+    "fetch": true
   },
   "rules": {
     "react/jsx-filename-extension": [1, { "extensions": [".js", ".jsx", ".ts", ".tsx"] }],
