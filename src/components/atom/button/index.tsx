@@ -5,7 +5,7 @@ interface Props {
   onClick?: React.MouseEventHandler;
 }
 
-const Button = (props: Props): React.ReactNode => {
+const Button = (props: Props): JSX.Element => {
   const { children, onClick } = props;
   return (
     <button onClick={onClick} type="button">

@@ -1,16 +1,6 @@
 import * as React from 'react';
-import Button from 'components/atom/button';
+import Timer from 'components/organism/timer';
 
-const App: React.FC = () => (
-  <div>
-    <Button
-      onClick={() => {
-        alert('Test');
-      }}
-    >
-      Home page
-    </Button>
-  </div>
-);
+const App = (): JSX.Element => <Timer />;
 
 export default App;
