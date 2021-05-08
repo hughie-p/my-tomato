@@ -33,6 +33,7 @@
     "react/jsx-curly-newline": "off",
     "react/prefer-stateless-function": 0,
     "react/jsx-fragments": [2, "element"],
+    "import/prefer-default-export": "off",
     "react/jsx-tag-spacing": [
       "error",
       {
