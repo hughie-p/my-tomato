@@ -1,5 +1,9 @@
 import * as React from 'react';
 
-const Input = (): JSX.Element => <input type="text" />;
+type Props = {
+  onChange: React.ChangeEventHandler<HTMLInputElement>;
+};
+
+const Input = ({ onChange }: Props): JSX.Element => <input type="text" onChange={onChange} />;
 
 export default Input;
