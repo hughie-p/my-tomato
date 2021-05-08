@@ -7,8 +7,10 @@ import Footer from 'components/organism/footer';
 const App = (): JSX.Element => (
   <React.Fragment>
     <main>
-      <Header />
-      <Timer pomodoroTime={90000} endTimePlan={Date.now() + 1000 * 100} />
+      <div className="wrapper">
+        <Header />
+        <Timer pomodoroTime={900000} endTimePlan={Date.now() + 900000} />
+      </div>
     </main>
     <Footer />
   </React.Fragment>

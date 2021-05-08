@@ -1,14 +1,18 @@
 import * as React from 'react';
+import cls from 'classnames';
+import './style.scss';
 
 interface Props {
+  active?: boolean;
   children: React.ReactNode;
   onClick?: React.MouseEventHandler;
 }
 
 const Button = (props: Props): JSX.Element => {
-  const { children, onClick } = props;
+  const { children, onClick, active } = props;
+  const classNames = cls({ active });
   return (
-    <button onClick={onClick} type="button">
+    <button className={classNames} onClick={onClick} type="button">
       {children}
     </button>
   );

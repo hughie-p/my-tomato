@@ -1,0 +1,12 @@
+.progressBar--wrapper {
+  margin-bottom: 40px;
+  background-color: rgba(0, 0, 0, 0.1);
+  height: 1px;
+}
+
+.progressBar--runner {
+  height: 2px;
+  background-color: white;
+  border-radius: 100px;
+  transform: translateY(-1px);
+}

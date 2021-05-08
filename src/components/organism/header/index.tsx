@@ -1,18 +1,23 @@
 import * as React from 'react';
 import { Link } from 'react-router-dom';
 import Button from 'components/atom/button';
-import Logo from 'images/deadline.png';
+// import Logo from 'images/tomato.svg';
 import './style.scss';
 
 const Header = (): JSX.Element => (
-  <React.Fragment>
+  <header>
     <Link to="/">
-      <img src={Logo} alt="logo" />
+      <h2>
+        {/* <img src={Logo} alt="logo" /> */}
+        <span>Focus</span>
+      </h2>
     </Link>
     <div>
+      <Button>Report</Button>
       <Button>Setting</Button>
+      <Button>Login</Button>
     </div>
-  </React.Fragment>
+  </header>
 );
 
 export default Header;
