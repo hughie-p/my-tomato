@@ -1,0 +1,26 @@
+.tasks--wrapper {
+  max-width: 480px;
+  margin: auto;
+
+  .tasks--header {
+    padding-bottom: 16px;
+    margin-bottom: 20px;
+    border-bottom: 2px solid white;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    .tasks--title {
+      color: white;
+      font-weight: bold;
+    }
+
+    .tasks--button__expand {
+      background: rgba(255, 255, 255, 0.2);
+      border: none;
+      border-radius: 4px;
+      color: white;
+      padding: 8px;
+    }
+  }
+}
