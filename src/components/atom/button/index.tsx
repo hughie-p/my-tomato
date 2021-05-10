@@ -10,7 +10,7 @@ interface Props {
 }
 
 const Button = (props: Props): JSX.Element => {
-  const { children, className, onClick, active } = props;
+  const { children, className = '', onClick, active } = props;
   const classNames = cls({ active, [className]: !!className });
   return (
     <button className={`${classNames}`} onClick={onClick} type="button">
