@@ -3,10 +3,11 @@
     "browser": true,
     "es2021": true
   },
+  "plugins": ["react", "jsx-a11y", "import", "@typescript-eslint", "prettier"],
   "extends": [
     "plugin:react/recommended",
     "plugin:@typescript-eslint/recommended",
-    "airbnb",
+    "airbnb-typescript",
     "prettier"
   ],
   "parser": "@typescript-eslint/parser",
@@ -14,10 +15,10 @@
     "ecmaFeatures": {
       "jsx": true
     },
+    "project": "tsconfig.json",
     "ecmaVersion": 12,
     "sourceType": "module"
   },
-  "plugins": ["react", "jsx-a11y", "import", "@typescript-eslint/eslint-plugin", "prettier"],
   "globals": {
     "window": true,
     "document": true,
