@@ -3,10 +3,17 @@ import { convertTimeNumerToString } from 'helper/datetime';
 import * as React from 'react';
 import './style.scss';
 
-const Clock = ({ min, sec }: { min: number; sec: number }): JSX.Element => (
+type Props = {
+  isClockRun: boolean;
+  changeClockStatus: React.MouseEventHandler<HTMLButtonElement>;
+  min: number;
+  sec: number;
+};
+
+const Clock = ({ changeClockStatus, isClockRun, min, sec }: Props): JSX.Element => (
   <div className="clock--wrapper">
     <div className="clock--button__modeSet">
-      <Button active>Pomodoro</Button>
+      <Button className="clock--button__modeActived">Pomodoro</Button>
       <Button>Short Break</Button>
       <Button>Long Break</Button>
     </div>
@@ -14,7 +21,7 @@ const Clock = ({ min, sec }: { min: number; sec: number }): JSX.Element => (
       {convertTimeNumerToString(min)}:{convertTimeNumerToString(sec)}
     </div>
     <div className="clock--button__start">
-      <Button>START</Button>
+      <Button onClick={changeClockStatus}>{!isClockRun ? 'start' : 'pause'}</Button>
     </div>
   </div>
 );

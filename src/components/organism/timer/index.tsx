@@ -1,8 +1,8 @@
+/* eslint-disable @typescript-eslint/no-unused-vars */
 /* eslint-disable no-unused-vars */
 import ProgressBar from 'components/atom/progress';
 import Status from 'components/atom/status';
 import Clock from 'components/molecule/clock';
-// import Input from 'components/atom/input';
 import { convertToMinute } from 'helper/datetime';
 import * as React from 'react';
 
@@ -13,29 +13,36 @@ const Timer = ({
   pomodoroTime: number;
   endTimePlan: number;
 }): JSX.Element => {
-  // const [inputVal, setInputVal] = React.useState<string>('');
   const [remainTime, setRemainTime] = React.useState<number>(pomodoroTime);
   const [endTime, setEndTime] = React.useState<number>(endTimePlan);
+  const [isClockRun, setIsClockRun] = React.useState<boolean>(false);
 
-  const startTimer = () => {
-    const remain = endTime - Date.now();
-    setRemainTime(remain);
+  const onClockStatusChange = (): void => {
+    if (remainTime) setIsClockRun(!isClockRun);
+  };
+
+  const runClock = (): void => {
+    const remain = 1000 * Math.ceil((endTime - Date.now()) / 1000);
+    if (remain >= 0) {
+      setRemainTime(remain);
+    } else {
+      setIsClockRun(false);
+    }
   };
 
   React.useEffect(() => {
-    const couterTimeout = setTimeout(startTimer, 1000);
-    return () => clearTimeout(couterTimeout);
-  }, [remainTime]);
+    let clockTimeout: NodeJS.Timeout;
+    if (isClockRun && remainTime) {
+      clockTimeout = setTimeout(runClock, 1000);
+    }
+    return () => clockTimeout && clearTimeout(clockTimeout);
+  }, [isClockRun, remainTime]);
 
   const { min, sec } = convertToMinute(remainTime);
   return (
     <React.Fragment>
-      {/* <Input onChange={() => setInputVal(inputVal)} /> */}
-      {/* <button onClick={() => setCouter(+inputVal)} /> */}
-      {/* <Button onClick={startCouter}>START</Button> */}
-      {/* <Button onClick={() => setEndTime(Date.now() + remainTime)}>STOP</Button> */}
       <ProgressBar remainTime={remainTime} timeSet={pomodoroTime} />
-      <Clock min={min} sec={sec} />
+      <Clock min={min} sec={sec} isClockRun={isClockRun} changeClockStatus={onClockStatusChange} />
       <Status />
     </React.Fragment>
   );

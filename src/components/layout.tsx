@@ -9,7 +9,7 @@ const Layout = (): JSX.Element => (
     <main>
       <div className="wrapper">
         <Header />
-        <Timer pomodoroTime={9000000} endTimePlan={Date.now() + 9000000} />
+        <Timer pomodoroTime={5000} endTimePlan={Date.now() + 5000} />
         <Tasks />
       </div>
     </main>
