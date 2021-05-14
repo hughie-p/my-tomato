@@ -30,10 +30,6 @@ const Timer = ({
   const { min, sec } = convertToMinute(remainTime);
   return (
     <React.Fragment>
-      {/* <Input onChange={() => setInputVal(inputVal)} /> */}
-      {/* <button onClick={() => setCouter(+inputVal)} /> */}
-      {/* <Button onClick={startCouter}>START</Button> */}
-      {/* <Button onClick={() => setEndTime(Date.now() + remainTime)}>STOP</Button> */}
       <ProgressBar remainTime={remainTime} timeSet={pomodoroTime} />
       <Clock min={min} sec={sec} />
       <Status />
