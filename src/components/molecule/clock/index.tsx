@@ -5,12 +5,12 @@ import './style.scss';
 
 type Props = {
   isClockRun: boolean;
-  changeClockStatus: React.MouseEventHandler<HTMLButtonElement>;
+  changeClockState: React.MouseEventHandler<HTMLButtonElement>;
   min: number;
   sec: number;
 };
 
-const Clock = ({ changeClockStatus, isClockRun, min, sec }: Props): JSX.Element => (
+const Clock = ({ changeClockState, isClockRun, min, sec }: Props): JSX.Element => (
   <div className="clock--wrapper">
     <div className="clock--button__modeSet">
       <Button className="clock--button__modeActived">Pomodoro</Button>
@@ -21,7 +21,7 @@ const Clock = ({ changeClockStatus, isClockRun, min, sec }: Props): JSX.Element 
       {convertTimeNumerToString(min)}:{convertTimeNumerToString(sec)}
     </div>
     <div className="clock--button__start">
-      <Button onClick={changeClockStatus}>{!isClockRun ? 'start' : 'pause'}</Button>
+      <Button onClick={changeClockState}>{!isClockRun ? 'start' : 'stop'}</Button>
     </div>
   </div>
 );

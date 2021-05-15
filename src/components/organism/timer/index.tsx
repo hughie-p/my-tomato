@@ -17,16 +17,17 @@ const Timer = ({
   const [endTime, setEndTime] = React.useState<number>(endTimePlan);
   const [isClockRun, setIsClockRun] = React.useState<boolean>(false);
 
-  const onClockStatusChange = (): void => {
-    if (remainTime) setIsClockRun(!isClockRun);
+  const onClockStateChange = (): void => {
+    if (remainTime) {
+      setEndTime(Date.now() + remainTime);
+      setIsClockRun(!isClockRun);
+    }
   };
 
   const runClock = (): void => {
     const remain = 1000 * Math.ceil((endTime - Date.now()) / 1000);
     if (remain >= 0) {
       setRemainTime(remain);
-    } else {
-      setIsClockRun(false);
     }
   };
 
@@ -34,6 +35,8 @@ const Timer = ({
     let clockTimeout: NodeJS.Timeout;
     if (isClockRun && remainTime) {
       clockTimeout = setTimeout(runClock, 1000);
+    } else if (!remainTime) {
+      setIsClockRun(false);
     }
     return () => clockTimeout && clearTimeout(clockTimeout);
   }, [isClockRun, remainTime]);
@@ -42,7 +45,7 @@ const Timer = ({
   return (
     <React.Fragment>
       <ProgressBar remainTime={remainTime} timeSet={pomodoroTime} />
-      <Clock min={min} sec={sec} isClockRun={isClockRun} changeClockStatus={onClockStatusChange} />
+      <Clock min={min} sec={sec} isClockRun={isClockRun} changeClockState={onClockStateChange} />
       <Status />
     </React.Fragment>
   );
