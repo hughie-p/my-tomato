@@ -1,5 +1,5 @@
-import { TaskData } from 'components/types/task';
 import * as React from 'react';
+import { TaskData } from 'types/task';
 import { FaCheckCircle } from 'react-icons/fa';
 import './style.scss';
 

@@ -1,6 +1,7 @@
 .tasks--wrapper {
   max-width: 480px;
-  margin: auto;
+  margin: 0 auto;
+  padding-bottom: 40px;
 
   .tasks--header {
     padding-bottom: 16px;
@@ -21,6 +22,7 @@
       border-radius: 4px;
       color: white;
       padding: 8px;
+      line-height: 12px;
       opacity: 0.9;
 
       &:hover{

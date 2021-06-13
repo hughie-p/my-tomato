@@ -1,10 +1,10 @@
 /* eslint-disable @typescript-eslint/no-unused-vars */
 /* eslint-disable no-unused-vars */
+import * as React from 'react';
 import ProgressBar from 'components/atom/progress';
 import Status from 'components/atom/status';
 import Clock from 'components/molecule/clock';
 import { convertToMinute } from 'helper/datetime';
-import * as React from 'react';
 
 const Timer = ({
   pomodoroTime,
