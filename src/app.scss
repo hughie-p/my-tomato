@@ -1,8 +1,10 @@
-main {
-  background-color: rgb(219, 82, 77);
-  min-height: 100vh;
+.wrapper {
+  main {
+    background-color: rgb(219, 82, 77);
+    min-height: 100vh;
+  }
 
-  .wrapper {
+  header {
     max-width: 620px;
     margin: 0 auto;
   }

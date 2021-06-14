@@ -1,20 +1,18 @@
-import * as React from 'react';
 import Header from 'components/organism/header';
 import Timer from 'components/organism/timer';
 import Tasks from 'components/organism/tasks';
 import Footer from 'components/organism/footer';
 
+// TODO: Layout for UI - Not neccessary in this app - has one route
 const Layout = (): JSX.Element => (
-  <React.Fragment>
+  <div className="wrapper">
     <main>
-      <div className="wrapper">
-        <Header />
-        <Timer pomodoroTime={5000} endTimePlan={Date.now() + 5000} />
-        <Tasks />
-      </div>
+      <Header />
+      <Timer pomodoroTime={5000} endTimePlan={Date.now() + 5000} />
+      <Tasks />
     </main>
     <Footer />
-  </React.Fragment>
+  </div>
 );
 
 export default Layout;

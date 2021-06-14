@@ -1,6 +1,5 @@
-import Button from 'components/atom/button';
 import { convertTimeNumerToString } from 'helper/datetime';
-import * as React from 'react';
+import Button from 'components/atom/button';
 import './style.scss';
 
 type Props = {
