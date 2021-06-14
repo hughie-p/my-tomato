@@ -2,18 +2,19 @@ import * as React from 'react';
 import cls from 'classnames';
 import './style.scss';
 
-interface Props {
-  className?: string;
+interface Props
+  extends React.DetailedHTMLProps<
+    React.ButtonHTMLAttributes<HTMLButtonElement>,
+    HTMLButtonElement
+  > {
   active?: boolean;
-  children: React.ReactNode;
-  onClick?: React.MouseEventHandler;
 }
 
 const Button = (props: Props): JSX.Element => {
-  const { children, className = '', onClick, active } = props;
-  const classNames = cls({ active, [className]: !!className });
+  const { children, onClick, className, active } = props;
+  const classNames = cls({ active });
   return (
-    <button className={`${classNames}`} onClick={onClick} type="button">
+    <button className={`${classNames} ${className}`} onClick={onClick} type="button">
       {children}
     </button>
   );
