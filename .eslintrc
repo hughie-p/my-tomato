@@ -31,6 +31,7 @@
     "react/jsx-filename-extension": [1, { "extensions": [".js", ".jsx", ".ts", ".tsx"] }],
     "no-use-before-define": "off",
     "@typescript-eslint/no-use-before-define": ["error"],
+    "@typescript-eslint/no-explicit-any": "off",
     "react/jsx-curly-newline": "off",
     "react/prefer-stateless-function": 0,
     "react/jsx-fragments": [2, "element"],
@@ -44,6 +45,8 @@
     "react/prop-types": 0,
     "react/require-default-props": "off",
     "react/react-in-jsx-scope": "off",
+    "consistent-return": "off",
+    "no-useless-return":"off",
     "prettier/prettier": "error",
     "import/extensions": [
       "error",
