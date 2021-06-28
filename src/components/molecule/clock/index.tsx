@@ -1,4 +1,4 @@
-import { convertTimeNumerToString } from 'helper/datetime';
+import { convertTimeNumerToString } from 'helpers/datetime';
 import Button from 'components/atom/button';
 import './style.scss';
 

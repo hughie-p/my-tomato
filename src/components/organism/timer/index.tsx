@@ -4,7 +4,7 @@ import * as React from 'react';
 import ProgressBar from 'components/atom/progress';
 import Status from 'components/atom/status';
 import Clock from 'components/molecule/clock';
-import { convertToMinute } from 'helper/datetime';
+import { convertToMinute } from 'helpers/datetime';
 
 const Timer = ({
   pomodoroTime,
