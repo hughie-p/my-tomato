@@ -20,7 +20,18 @@ const LoginModal = (): JSX.Element => {
     }
   };
 
-  const handleLoginFacebook = () => {};
+  const handleLoginFacebook = () => {
+    try {
+      getFirebaseAuth()
+        .then(({ auth, facebookProvider }) => auth.signInWithPopup(facebookProvider))
+        .catch((err) => {
+          alert(err);
+          return;
+        });
+    } catch (err) {
+      console.error(err);
+    }
+  };
 
   return (
     <Popup
