@@ -2,6 +2,7 @@ import { FaFacebookSquare, FaUserCircle } from 'react-icons/fa';
 import Popup from 'reactjs-popup';
 import { getFirebaseAuth } from 'contexts/auth';
 import './style.scss';
+import { AiOutlineGoogle } from 'react-icons/ai';
 
 const LoginButton = () => (
   <button type="button">
@@ -31,11 +32,12 @@ const LoginModal = (): JSX.Element => {
       <div className="login--content">
         <div className="login--icon">
           <button type="button" onClick={handleLoginGoogle}>
-            <FaFacebookSquare />
+            <AiOutlineGoogle fontSize={16} className="login--icon" />
             Login with Google
           </button>
           <button type="button" onClick={handleLoginFacebook}>
-            Login with Email
+            <FaFacebookSquare fontSize={16} className="login--icon" />
+            Login with Facebook
           </button>
         </div>
       </div>

@@ -1,5 +1,7 @@
 .login--icon {
   button {
+    display: flex;
+    align-items: center;
     padding: 10px 16px;
     background: none;
     outline: none;
@@ -15,5 +17,9 @@
     &:active {
       transform: none;
     }
+  }
+
+  .login--icon {
+    margin-right: 8px;
   }
 }

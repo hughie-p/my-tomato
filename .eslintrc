@@ -49,6 +49,7 @@
     "no-useless-return":"off",
     "prettier/prettier": "error",
     "no-console":"off",
+    "no-alert":"off",
     "import/extensions": [
       "error",
       "ignorePackages",
