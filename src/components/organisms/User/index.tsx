@@ -1,11 +1,12 @@
 import { useContext } from 'react';
 import Popup from 'reactjs-popup';
 import firebase from 'firebase/app';
-import { AuthContext } from 'contexts/auth';
-import './style.scss';
-import { FaRocket, FaUserAlt } from 'react-icons/fa';
+import { FaRocket } from 'react-icons/fa';
 import { FiLogOut } from 'react-icons/fi';
 import { AiTwotoneDelete } from 'react-icons/ai';
+import { AuthContext } from 'contexts/auth';
+import UserProfile from 'components/molecules/UserProfile';
+import './style.scss';
 
 const triggerModal = ({ photoURL, displayName }): JSX.Element => (
   <button className="header--button__user" type="button">
@@ -18,26 +19,11 @@ const UserModal = (): JSX.Element => {
   const { user } = authContext;
   const { photoURL, displayName } = user as firebase.UserInfo;
 
-  // const handleLoginGoogle = () => {
-  //   try {
-  //     getFirebaseAuth().then(({ auth, googleProvider }) => auth.signInWithPopup(googleProvider));
-  //   } catch (err) {
-  //     console.error(err);
-  //   }
-  // };
-
   return (
-    <Popup
-      trigger={triggerModal({ photoURL, displayName })}
-      position="bottom right"
-      closeOnDocumentClick
-    >
+    <Popup trigger={triggerModal({ photoURL, displayName })} position="bottom right" nested>
       <div className="userModal--content">
         <div className="userModal--button">
-          <button type="button">
-            <FaUserAlt fontSize={14} className="userModal--icon" />
-            <span>Profile</span>
-          </button>
+          <UserProfile />
           <button type="button">
             <FaRocket fontSize={14} className="userModal--icon" />
             Subscription

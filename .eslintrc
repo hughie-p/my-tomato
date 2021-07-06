@@ -48,6 +48,7 @@
     "consistent-return": "off",
     "no-useless-return":"off",
     "prettier/prettier": "error",
+    "no-console":"off",
     "import/extensions": [
       "error",
       "ignorePackages",

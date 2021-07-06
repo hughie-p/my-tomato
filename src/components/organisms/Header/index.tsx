@@ -4,11 +4,11 @@ import { FiSettings } from 'react-icons/fi';
 import { FaRegChartBar } from 'react-icons/fa';
 import { GiTomato } from 'react-icons/gi';
 import { AuthContext } from 'contexts/auth';
-import Setting from 'components/organism/setting';
-import Button from 'components/atom/button';
-import Login from '../login';
+import Setting from 'components/organisms/Setting';
+import Button from 'components/atoms/Button';
+import Login from '../Login';
 import './style.scss';
-import User from '../user';
+import User from '../User';
 
 type ModalState = {
   setting: boolean;

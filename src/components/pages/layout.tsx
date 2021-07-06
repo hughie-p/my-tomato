@@ -1,7 +1,7 @@
-import Header from 'components/organism/header';
-import Timer from 'components/organism/timer';
-import Tasks from 'components/organism/tasks';
-import Footer from 'components/organism/footer';
+import Header from 'components/organisms/Header';
+import Timer from 'components/organisms/Timer';
+import Tasks from 'components/organisms/Tasks';
+import Footer from 'components/organisms/Footer';
 
 // TODO: Layout for UI - Not neccessary in this app - has one route
 const Layout = (): JSX.Element => (

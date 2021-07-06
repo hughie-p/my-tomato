@@ -1,4 +1,4 @@
-import Icon from 'components/atom/icon';
+import Icon from 'components/atoms/Icon';
 import * as React from 'react';
 import { Link } from 'react-router-dom';
 import './style.scss';
