@@ -1,9 +1,11 @@
-In the project directory, you can run:
+# Pomodoro App
 
-### `yarn start`
+Simple pomodoro app by React (Create React App), Firebase, TailwindCss.
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+---
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
+## Features
+
+- Pomodoro timer
+- Login, logout with Firebase
+- Report, ranking
