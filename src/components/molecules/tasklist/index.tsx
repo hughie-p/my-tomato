@@ -1,8 +1,8 @@
-import Button from 'components/atom/button';
+import Button from 'components/atoms/button';
 import { HiPlusCircle } from 'react-icons/hi';
 import * as React from 'react';
 import './style.scss';
-import Task from 'components/atom/task';
+import Task from 'components/atoms/task';
 
 const dummyData = [
   {

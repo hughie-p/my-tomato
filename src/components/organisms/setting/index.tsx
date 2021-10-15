@@ -1,6 +1,6 @@
 import Popup from 'reactjs-popup';
 import { AiOutlineClose } from 'react-icons/ai';
-import Button from 'components/atom/button';
+import Button from 'components/atoms/button';
 import './style.scss';
 
 type Props = {

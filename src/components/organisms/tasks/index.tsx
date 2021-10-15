@@ -1,8 +1,8 @@
-import Button from 'components/atom/button';
+import Button from 'components/atoms/button';
 import { FiMenu } from 'react-icons/fi';
 import * as React from 'react';
 import './style.scss';
-import TaskList from 'components/molecule/tasklist';
+import TaskList from 'components/molecules/tasklist';
 
 const Tasks = (): JSX.Element => (
   <div className="tasks--wrapper">

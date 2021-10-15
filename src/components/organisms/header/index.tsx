@@ -1,10 +1,10 @@
 import { useState } from 'react';
 import { Link } from 'react-router-dom';
-import Button from 'components/atom/button';
+import Button from 'components/atoms/button';
 import { FiSettings } from 'react-icons/fi';
 import { FaRegChartBar, FaUserCircle } from 'react-icons/fa';
 import { GiTomato } from 'react-icons/gi';
-import Setting from 'components/organism/setting';
+import Setting from 'components/organisms/setting';
 import './style.scss';
 
 type ModalState = {

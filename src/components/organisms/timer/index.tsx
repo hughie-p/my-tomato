@@ -1,9 +1,9 @@
 /* eslint-disable @typescript-eslint/no-unused-vars */
 /* eslint-disable no-unused-vars */
 import * as React from 'react';
-import ProgressBar from 'components/atom/progress';
-import Status from 'components/atom/status';
-import Clock from 'components/molecule/clock';
+import ProgressBar from 'components/atoms/progress';
+import Status from 'components/atoms/status';
+import Clock from 'components/molecules/clock';
 import { convertToMinute } from 'helper/datetime';
 
 const Timer = ({
