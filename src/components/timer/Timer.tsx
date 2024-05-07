@@ -1,8 +1,8 @@
 "use client";
 
+import { useState } from "react";
 import { useTimer } from "@/hooks/use-timer";
 import { Button } from "../ui/button";
-import { useRef, useState } from "react";
 import { cn } from "@/lib/utils";
 import { formatTime } from "./Timer.helpers";
 
@@ -31,16 +31,24 @@ const ModeTimerSettings = {
 export default function Timer() {
   const [mode, setMode] = useState(TimerMode.Pomodoro);
 
+  const onPomodoroCycleEnd = () => {
+    if (mode === TimerMode.Pomodoro) {
+      // Increase the number of pomodoros completed
+      console.log("Pomodoro cycle ended");
+    }
+  };
+
   const { time, startTimer, pauseTimer } = useTimer(
     ModeTimerSettings[mode],
     () => {
+      onPomodoroCycleEnd();
       setMode((mode + 1) % 3);
     }
   );
 
   const handleStartTimer = () => {
     // const startTime = new Date().getTime();
-    // console.log("start time", startTime);
+    // console.log("start time", startTime);g
 
     // setStartTime(startTime);
     startTimer();
@@ -53,8 +61,6 @@ export default function Timer() {
   const handlePauseTimer = () => {
     pauseTimer();
   };
-
-  console.log({ mode });
 
   return (
     <>

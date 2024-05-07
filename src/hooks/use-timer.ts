@@ -1,32 +1,23 @@
 "use client";
 
 import { useEffect, useLayoutEffect, useRef, useState } from "react";
-
-const timerWoker =
-  typeof window !== "undefined"
-    ? new window.Worker(new URL("../workers/timer-worker", import.meta.url), {
-        type: "module",
-      })
-    : null;
+import { useTimerWorker } from "./use-timer-worker";
 
 export function useTimer(timeCount: number, onComplete?: () => void) {
   const [time, setTime] = useState(timeCount);
   const callbackRef = useRef(onComplete);
+  const timerWorker = useTimerWorker();
 
   useEffect(() => {
     setTime(timeCount);
   }, [timeCount]);
 
   const startTimer = () => {
-    if (!window.Worker) {
-      throw new Error("Web Workers are not supported in this environment");
-    }
-
-    timerWoker!.postMessage({ type: "start", timeCount });
+    timerWorker.current?.postMessage({ type: "start", timeCount });
   };
 
   const pauseTimer = () => {
-    timerWoker!.postMessage({ type: "pause" });
+    timerWorker.current?.postMessage({ type: "pause" });
   };
 
   useLayoutEffect(() => {
@@ -34,7 +25,8 @@ export function useTimer(timeCount: number, onComplete?: () => void) {
   });
 
   useEffect(() => {
-    if (!timerWoker) return;
+    const worker = timerWorker.current;
+    if (!worker) return;
 
     const onMessage = (e: MessageEvent) => {
       setTime(e.data);
@@ -43,12 +35,12 @@ export function useTimer(timeCount: number, onComplete?: () => void) {
       }
     };
 
-    timerWoker.addEventListener("message", onMessage);
+    worker.addEventListener("message", onMessage);
 
     return () => {
-      timerWoker.removeEventListener("message", onMessage);
+      worker.removeEventListener("message", onMessage);
     };
-  }, []);
+  }, [timerWorker]);
 
   return { time, startTimer, pauseTimer };
 }

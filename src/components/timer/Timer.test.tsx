@@ -1,5 +1,11 @@
-import { test } from "vitest";
+import { render } from "@testing-library/react";
+import { assert, test } from "vitest";
+import Timer from "./Timer";
 
-test("Timer component", (t) => {
-  t.expect(1).toBe(1);
+test("render", (t) => {
+  // const c = render(<Timer />);
+
+  // const timer = c.findAllByText("Start");
+  // assert.isNotNull(timer);
+  t.expect(1).equal(1);
 });
