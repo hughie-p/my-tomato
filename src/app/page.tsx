@@ -8,6 +8,7 @@ export default function Home() {
       <Navbar />
       <Timer />
       <Tasks />
+      <p className="text-red-600">Test</p>
     </main>
   );
 }
